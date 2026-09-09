@@ -1,137 +1,109 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Grace Community Church</title>
+    <title>PureGlow Skincare | Natural Beauty</title>
 
     <style>
-
-        /* =========================
-           BASIC RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
+        :root {
+            --green: #174d35;
+            --dark-green: #0d3021;
+            --light-green: #edf5ec;
+            --cream: #faf8f1;
+            --gold: #b8914a;
+            --text: #26352d;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: Georgia, "Times New Roman", serif;
-            color: #172b4d;
-            background: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
             line-height: 1.6;
         }
 
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        :root {
-            --navy: #09284b;
-            --dark-navy: #061d37;
-            --gold: #e0ae2d;
-            --cream: #f7f6f2;
-            --text: #172b4d;
-            --muted: #667085;
-        }
-
-
-        /* =========================
-           NAVIGATION
-        ========================= */
+        /* ================= NAVIGATION ================= */
 
         header {
-            position: fixed;
-            width: 100%;
+            background: rgba(255,255,255,0.97);
+            position: sticky;
             top: 0;
-            left: 0;
             z-index: 1000;
-            background: rgba(9, 40, 75, 0.98);
-            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
         }
 
         .navbar {
-            min-height: 76px;
+            max-width: 1200px;
+            margin: auto;
+            height: 78px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 25px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: white;
+            gap: 10px;
+            color: var(--green);
+            text-decoration: none;
         }
 
         .logo-icon {
             font-size: 38px;
-            color: var(--gold);
         }
 
-        .logo-name {
-            font-size: 22px;
+        .logo-text {
+            font-size: 25px;
             font-weight: bold;
-            letter-spacing: 4px;
+            letter-spacing: -1px;
         }
 
-        .logo-subtitle {
+        .logo-text span {
             display: block;
-            color: var(--gold);
-            font-family: Arial, sans-serif;
-            font-size: 10px;
-            letter-spacing: 3px;
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-align: center;
+            color: #555;
         }
 
         .nav-links {
             display: flex;
-            align-items: center;
-            gap: 28px;
             list-style: none;
+            gap: 35px;
         }
 
         .nav-links a {
-            color: white;
-            font-family: Arial, sans-serif;
+            color: #26352d;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 14px;
             transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--green);
         }
 
-        .join-button {
-            background: var(--gold);
-            color: var(--navy) !important;
-            padding: 11px 22px;
-            border-radius: 6px;
-            font-weight: bold;
+        .nav-button {
+            background: var(--green);
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 25px;
         }
 
-        .join-button:hover {
-            background: white;
-        }
-
-        /* Mobile menu */
+        /* Mobile Menu */
 
         #menu-toggle {
             display: none;
@@ -139,820 +111,701 @@
 
         .menu-icon {
             display: none;
-            color: white;
             font-size: 30px;
             cursor: pointer;
+            color: var(--green);
         }
 
-
-        /* =========================
-           HERO
-        ========================= */
+        /* ================= HERO ================= */
 
         .hero {
-            min-height: 680px;
-            padding-top: 76px;
+            min-height: 650px;
+            background:
+                linear-gradient(90deg, rgba(239,246,233,0.97) 0%,
+                rgba(239,246,233,0.86) 45%,
+                rgba(239,246,233,0.2) 100%),
+                url("https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1800&q=85");
 
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(2,18,36,0.90),
-                    rgba(2,18,36,0.50),
-                    rgba(2,18,36,0.25)
-                ),
-
-                url("https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1800&q=90")
-                center/cover no-repeat;
         }
 
         .hero-content {
-            max-width: 700px;
-            color: white;
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 70px 25px;
         }
 
-        .hero-small {
-            color: var(--gold);
-            font-family: Arial, sans-serif;
-            font-size: 13px;
+        .small-heading {
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
             font-weight: bold;
-            letter-spacing: 5px;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: clamp(48px, 7vw, 78px);
+            font-family: Georgia, serif;
+            font-size: clamp(45px, 6vw, 76px);
             line-height: 1.05;
-            margin: 15px 0;
+            max-width: 650px;
+            color: #102f21;
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
-            color: var(--gold);
+            color: var(--green);
         }
 
         .hero p {
-            font-size: 20px;
-            font-style: italic;
-            max-width: 650px;
+            max-width: 560px;
+            font-size: 18px;
+            color: #35463d;
             margin-bottom: 30px;
         }
 
-        .hero-button {
+        .btn {
             display: inline-block;
-            background: var(--gold);
-            color: var(--navy);
             padding: 14px 27px;
-            border-radius: 7px;
-            font-family: Arial, sans-serif;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
         }
 
-        .hero-button:hover {
+        .btn-primary {
+            background: var(--green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--green);
+            color: var(--green);
+            margin-left: 10px;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
             background: white;
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           VALUES
-        ========================= */
-
-        .values {
-            padding: 30px 0;
-        }
-
-        .values-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-        }
-
-        .value {
-            text-align: center;
-            padding: 15px 25px;
-            border-right: 1px solid #ddd;
-        }
-
-        .value:last-child {
-            border-right: none;
-        }
-
-        .value-icon {
-            width: 50px;
-            height: 50px;
+            max-width: 1200px;
             margin: auto;
+            padding: 25px;
+            gap: 20px;
+        }
 
-            border-radius: 50%;
-
-            background: var(--gold);
-            color: white;
-
+        .feature {
             display: flex;
             align-items: center;
-            justify-content: center;
-
-            font-size: 22px;
+            gap: 15px;
+            padding: 15px;
         }
 
-        .value h3 {
-            margin-top: 8px;
-            font-size: 18px;
+        .feature-icon {
+            font-size: 30px;
         }
 
-        .value p {
-            color: var(--muted);
-            font-family: Arial, sans-serif;
-            font-size: 13px;
+        .feature h4 {
+            color: var(--green);
+            font-size: 14px;
         }
 
+        .feature p {
+            font-size: 12px;
+            color: #777;
+        }
 
-        /* =========================
-           PASTOR SECTION
-        ========================= */
+        /* ================= ABOUT ================= */
 
-        .pastor-section {
+        .about {
             background: var(--cream);
+            padding: 90px 25px;
         }
 
-        .pastor-grid {
+        .about-container {
+            max-width: 1100px;
+            margin: auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
         }
 
-        .pastor-photo {
-            min-height: 520px;
-        }
-
-        .pastor-photo img {
-            height: 100%;
-            min-height: 520px;
+        .about-image img {
+            width: 100%;
+            height: 480px;
             object-fit: cover;
+            border-radius: 8px;
         }
 
-        .pastor-content {
-            padding: 70px 60px;
-
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+        .about-text h2,
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            color: #163827;
+            margin-bottom: 20px;
         }
 
-        .pastor-label {
-            color: #c59622;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 4px;
+        .about-text p {
+            margin-bottom: 18px;
+            color: #59645e;
         }
 
-        .pastor-content h2 {
-            font-size: 40px;
-            line-height: 1.2;
-            margin: 10px 0 25px;
-        }
+        /* ================= PRODUCTS ================= */
 
-        .pastor-content p {
-            color: #566477;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            margin-bottom: 17px;
-        }
-
-        .pastor-name {
-            font-size: 23px;
-            font-style: italic;
-            margin-top: 5px;
-        }
-
-        .pastor-title {
-            color: #667085;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           SERVICE BAR
-        ========================= */
-
-        .service-bar {
-            background: var(--navy);
-            color: white;
-            padding: 28px 0;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-        }
-
-        .service-box {
-            padding: 0 30px;
-            border-right: 1px solid rgba(255,255,255,0.25);
-        }
-
-        .service-box:last-child {
-            border-right: none;
-        }
-
-        .service-box h3 {
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-
-        .service-box p {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
-
-        .section {
-            padding: 80px 0;
+        .products {
+            padding: 90px 25px;
+            background: #f4f8f1;
         }
 
         .section-heading {
             text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-heading span {
-            color: #c59622;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 4px;
-        }
-
-        .section-heading h2 {
-            font-size: 39px;
-            margin-top: 5px;
+            max-width: 700px;
+            margin: 0 auto 45px;
         }
 
         .section-heading p {
-            color: var(--muted);
-            font-family: Arial, sans-serif;
-            font-size: 14px;
+            color: #68746d;
         }
 
-
-        /* =========================
-           PHOTO GALLERY
-        ========================= */
-
-        .gallery {
+        .product-grid {
+            max-width: 1100px;
+            margin: auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 20px;
         }
 
-        .gallery-card {
-            height: 300px;
+        .product {
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
-            border-radius: 7px;
-            position: relative;
-            box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
         }
 
-        .gallery-card img {
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.10);
+        }
+
+        .product-image {
+            height: 260px;
+            overflow: hidden;
+            background: #f4f4ed;
+        }
+
+        .product-image img {
+            width: 100%;
             height: 100%;
             object-fit: cover;
             transition: 0.5s;
         }
 
-        .gallery-card:hover img {
-            transform: scale(1.08);
+        .product:hover img {
+            transform: scale(1.05);
         }
 
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+        .product-info {
+            padding: 20px;
+        }
 
-            padding: 40px 15px 15px;
+        .product-info h3 {
+            color: #173c29;
+            margin-bottom: 4px;
+        }
 
-            color: white;
-            font-family: Arial, sans-serif;
+        .product-info small {
+            color: #777;
+        }
+
+        .price {
+            font-size: 20px;
             font-weight: bold;
-
-            background:
-                linear-gradient(
-                    transparent,
-                    rgba(0,0,0,0.75)
-                );
+            color: var(--green);
+            margin: 12px 0;
         }
 
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            background: var(--cream);
+        .cart {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            border-radius: 20px;
+            background: var(--green);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        .contact-grid {
+        /* ================= REVIEWS ================= */
+
+        .reviews {
+            padding: 90px 25px;
+            background: white;
+        }
+
+        .review-grid {
+            max-width: 1100px;
+            margin: auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 65px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
-        .contact-left h2 {
-            font-size: 40px;
-            line-height: 1.2;
+        .review {
+            padding: 30px;
+            background: #fafaf7;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .stars {
+            color: #d19b27;
+            font-size: 18px;
             margin-bottom: 15px;
         }
 
-        .contact-left > p {
-            color: var(--muted);
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 15px;
+        .review p {
+            color: #59645e;
+            font-style: italic;
             margin-bottom: 20px;
         }
 
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            flex-shrink: 0;
-
-            border-radius: 50%;
-
-            background: var(--navy);
-            color: var(--gold);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .review h4 {
+            color: var(--green);
         }
 
-        .contact-item h4 {
-            font-family: Arial, sans-serif;
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: var(--light-green);
+            padding: 90px 25px;
         }
 
-        .contact-item p {
-            color: var(--muted);
-            font-family: Arial, sans-serif;
-            font-size: 14px;
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
         }
 
+        .contact-info h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            color: var(--dark-green);
+            margin-bottom: 15px;
+        }
 
-        /* =========================
-           SOCIAL MEDIA
-        ========================= */
+        .contact-info p {
+            color: #58655d;
+            margin-bottom: 20px;
+        }
 
-        .social {
+        .contact-details {
             margin-top: 25px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 9px;
-            margin-top: 10px;
+        .contact-details div {
+            margin: 15px 0;
         }
 
-        .social-links a {
-            width: 40px;
-            height: 40px;
-
-            border-radius: 50%;
-
-            background: var(--navy);
-            color: white;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--gold);
-            color: var(--navy);
-            transform: translateY(-4px);
-        }
-
-
-        /* =========================
-           CONTACT FORM
-        ========================= */
-
-        .contact-form {
+        form {
             background: white;
             padding: 30px;
-            border-radius: 8px;
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
+        input,
+        textarea {
             width: 100%;
-            padding: 13px;
-
-            border: 1px solid #d9dde3;
-            border-radius: 5px;
-
-            font-family: Arial, sans-serif;
-            outline: none;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
         }
 
-        .form-group textarea {
+        textarea {
             height: 130px;
             resize: vertical;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--gold);
-        }
-
-        .send-button {
-            background: var(--gold);
-            color: var(--navy);
-
+        form button {
             border: none;
-
-            padding: 13px 25px;
-
-            border-radius: 6px;
-
+            width: 100%;
+            padding: 14px;
+            border-radius: 25px;
+            background: var(--green);
+            color: white;
             font-weight: bold;
-
             cursor: pointer;
         }
 
+        /* ================= SOCIAL ================= */
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .social {
+            text-align: center;
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .social h3 {
+            font-family: Georgia, serif;
+            color: var(--green);
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-buttons a {
+            width: 43px;
+            height: 43px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background: var(--green);
+            transition: 0.3s;
+        }
+
+        .social-buttons a:hover {
+            transform: translateY(-4px);
+            background: var(--gold);
+        }
+
+        /* ================= FOOTER ================= */
 
         footer {
-            background: var(--dark-navy);
+            background: var(--dark-green);
             color: white;
-            padding: 55px 0 20px;
+            padding: 50px 25px 20px;
         }
 
-        .footer-grid {
+        .footer-container {
+            max-width: 1100px;
+            margin: auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 22px;
-            letter-spacing: 4px;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
         }
 
         footer h3 {
-            color: var(--gold);
             margin-bottom: 15px;
         }
 
-        footer p,
-        footer li {
-            color: #b8c4d0;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
+        footer p {
+            color: #c9d4ce;
+            font-size: 14px;
         }
 
-        .footer-links {
+        footer ul {
             list-style: none;
         }
 
-        .footer-links li {
-            margin-bottom: 8px;
+        footer li {
+            margin: 8px 0;
         }
 
-        .footer-links a:hover {
-            color: var(--gold);
+        footer a {
+            color: #c9d4ce;
+            text-decoration: none;
+            font-size: 14px;
         }
 
         .copyright {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.15);
-            padding-top: 18px;
-
             text-align: center;
-
-            color: #8fa0b1;
-
-            font-family: Arial, sans-serif;
+            color: #aebdb5;
             font-size: 12px;
         }
 
-
-        /* =========================
-           TABLET
-        ========================= */
+        /* ================= MOBILE ================= */
 
         @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: 0.4s ease;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            }
+
+            .nav-links li {
+                text-align: center;
+                padding: 15px;
+            }
 
             .menu-icon {
                 display: block;
             }
 
-            .nav-links {
-                position: absolute;
-                top: 76px;
-                left: 0;
-
-                width: 100%;
-
-                background: var(--dark-navy);
-
-                flex-direction: column;
-                gap: 0;
-
-                max-height: 0;
-                overflow: hidden;
-
-                transition: max-height 0.4s ease;
-            }
-
-            .nav-links li {
-                width: 100%;
-                text-align: center;
-
-                border-top:
-                    1px solid rgba(255,255,255,0.08);
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 15px;
-            }
-
             #menu-toggle:checked ~ .nav-links {
-                max-height: 500px;
+                max-height: 450px;
             }
 
-            .values-grid {
+            .features {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .value {
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-                padding: 20px;
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .pastor-grid,
-            .contact-grid {
+            .review-grid {
                 grid-template-columns: 1fr;
             }
 
-            .service-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .service-box {
-                border-right: none;
-                border-bottom:
-                    1px solid rgba(255,255,255,0.2);
-                padding: 15px;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
+        @media (max-width: 650px) {
 
-        /* =========================
-           MOBILE
-        ========================= */
+            .navbar {
+                height: 70px;
+            }
 
-        @media (max-width: 600px) {
+            .logo-text {
+                font-size: 20px;
+            }
 
-            .container {
-                width: 92%;
+            .logo-icon {
+                font-size: 30px;
             }
 
             .hero {
-                min-height: 650px;
+                min-height: 600px;
+                background-position: 65% center;
+            }
+
+            .hero-content {
+                padding-top: 100px;
+                padding-bottom: 100px;
             }
 
             .hero h1 {
-                font-size: 47px;
+                font-size: 46px;
             }
 
             .hero p {
-                font-size: 17px;
+                font-size: 16px;
             }
 
-            .values-grid {
+            .btn {
+                padding: 12px 20px;
+            }
+
+            .features {
                 grid-template-columns: 1fr;
             }
 
-            .value {
-                border: none;
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            .pastor-content {
-                padding: 50px 25px;
+            .about-image img {
+                height: 350px;
             }
 
-            .pastor-content h2 {
-                font-size: 31px;
-            }
-
-            .pastor-photo,
-            .pastor-photo img {
-                min-height: 400px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
+            .about-text h2,
             .section-heading h2,
-            .contact-left h2 {
-                font-size: 31px;
+            .contact-info h2 {
+                font-size: 34px;
             }
 
-            .gallery {
+            .product-grid {
                 grid-template-columns: 1fr;
             }
 
-            .gallery-card {
-                height: 310px;
+            .product-image {
+                height: 320px;
             }
 
-            .form-row {
+            .footer-container {
                 grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 22px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .logo-name {
-                font-size: 17px;
+                gap: 30px;
             }
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- ================= NAVIGATION ================= -->
 
 <header>
-
-    <div class="container navbar">
+    <nav class="navbar">
 
         <a href="#home" class="logo">
-
-            <div class="logo-icon">✝</div>
-
-            <div>
-                <div class="logo-name">
-                    GRACE
-                </div>
-
-                <span class="logo-subtitle">
-                    COMMUNITY CHURCH
-                </span>
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                PureGlow
+                <span>SKINCARE</span>
             </div>
-
         </a>
 
+        <!-- Mobile menu checkbox -->
+        <input type="checkbox" id="menu-toggle">
 
-        <!-- Mobile menu button -->
-
-        <input
-            type="checkbox"
-            id="menu-toggle"
-        >
-
-        <label
-            for="menu-toggle"
-            class="menu-icon"
-        >
-            ☰
-        </label>
-
+        <label for="menu-toggle" class="menu-icon">☰</label>
 
         <ul class="nav-links">
-
-            <li>
-                <a href="#home">Home</a>
-            </li>
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#ministries">Ministries</a>
-            </li>
-
-            <li>
-                <a href="#events">Events</a>
-            </li>
-
-            <li>
-                <a href="#gallery">Gallery</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
-            <li>
-                <a href="#contact" class="join-button">
-                    Join Us
-                </a>
-            </li>
-
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#products" class="nav-button">Shop Now</a></li>
         </ul>
 
-    </div>
-
+    </nav>
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-    <div class="container">
+    <div class="hero-content">
 
-        <div class="hero-content">
+        <div class="small-heading">
+            Healthy Skin • Natural Beauty • Lasting Confidence
+        </div>
 
-            <div class="hero-small">
-                WELCOME TO
-            </div>
+        <h1>
+            Welcome to<br>
+            <span>PureGlow</span> Skincare
+        </h1>
 
-            <h1>
-                Grace
-                <span>Community</span>
-                Church
-            </h1>
+        <p>
+            Discover premium skincare products thoughtfully created
+            to nourish your skin, enhance your natural beauty and
+            leave you glowing with confidence.
+        </p>
+
+        <a href="#products" class="btn btn-primary">
+            Shop Our Products →
+        </a>
+
+        <a href="#about" class="btn btn-outline">
+            Learn More
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">🌿</div>
+        <div>
+            <h4>Natural Ingredients</h4>
+            <p>Gentle on your skin</p>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">♡</div>
+        <div>
+            <h4>Dermatologist Tested</h4>
+            <p>Trusted & effective</p>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <div>
+            <h4>Fast Delivery</h4>
+            <p>Get your glow sooner</p>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">✓</div>
+        <div>
+            <h4>Customer Satisfaction</h4>
+            <p>Your happiness matters</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=1000&q=85"
+                alt="PureGlow skincare products">
+        </div>
+
+        <div class="about-text">
+
+            <div class="small-heading">About Us</div>
+
+            <h2>More Than Just Skincare</h2>
 
             <p>
-                A place to belong, grow and make a
-                difference for God's Kingdom.
+                At PureGlow Skincare, we believe healthy skin is the
+                foundation of true beauty.
             </p>
 
-            <a
-                href="#contact"
-                class="hero-button"
-            >
-                Join Us Every Sunday →
+            <p>
+                Our mission is to provide high-quality, gentle and
+                effective skincare solutions designed to nourish your
+                skin and bring out your natural glow.
+            </p>
+
+            <p>
+                We carefully select ingredients with your skin's
+                wellbeing in mind, because you deserve to glow —
+                naturally.
+            </p>
+
+            <a href="#products" class="btn btn-primary">
+                Discover Our Products →
             </a>
 
         </div>
@@ -962,768 +815,349 @@
 </section>
 
 
+<!-- ================= PRODUCTS ================= -->
 
-<!-- =========================
-     VALUES
-========================= -->
+<section class="products" id="products">
 
-<section class="values">
+    <div class="section-heading">
 
-    <div class="container values-grid">
+        <div class="small-heading">Our Products</div>
 
+        <h2>Skincare Essentials for Every Skin Type</h2>
 
-        <div class="value">
-
-            <div class="value-icon">
-                📖
-            </div>
-
-            <h3>
-                Bible-Centered
-            </h3>
-
-            <p>
-                Grounded in God's Word,
-                led by His truth.
-            </p>
-
-        </div>
-
-
-        <div class="value">
-
-            <div class="value-icon">
-                👥
-            </div>
-
-            <h3>
-                Family Oriented
-            </h3>
-
-            <p>
-                A church family that
-                cares and supports.
-            </p>
-
-        </div>
-
-
-        <div class="value">
-
-            <div class="value-icon">
-                ♥
-            </div>
-
-            <h3>
-                Community Focused
-            </h3>
-
-            <p>
-                Serving our neighbors
-                and making an impact.
-            </p>
-
-        </div>
-
-
-        <div class="value">
-
-            <div class="value-icon">
-                🙏
-            </div>
-
-            <h3>
-                Spirit-Led
-            </h3>
-
-            <p>
-                Empowered by the Holy Spirit
-                to live and share His love.
-            </p>
-
-        </div>
-
+        <p>
+            Simple, effective skincare products to help you build
+            a healthy and radiant skincare routine.
+        </p>
 
     </div>
 
-</section>
 
+    <div class="product-grid">
 
+        <!-- PRODUCT 1 -->
 
-<!-- =========================
-     PASTOR'S WELCOME
-========================= -->
+        <div class="product">
 
-<section
-    class="pastor-section"
-    id="about"
->
-
-    <div class="pastor-grid">
-
-
-        <div class="pastor-photo">
-
-            <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=90"
-                alt="Pastor welcoming church members"
-            >
-
-        </div>
-
-
-        <div class="pastor-content">
-
-            <div class="pastor-label">
-                PASTOR'S WELCOME
-            </div>
-
-            <h2>
-                Welcome to Grace
-                Community Church!
-            </h2>
-
-            <p>
-                It is my great joy to welcome you
-                to our church family.
-            </p>
-
-            <p>
-                At Grace Community Church,
-                we believe that God's love changes
-                lives and that everyone has a place
-                in His family.
-            </p>
-
-            <p>
-                Whether you are new to faith,
-                returning to church, or have been
-                walking with God for many years,
-                you are welcome here.
-            </p>
-
-            <p>
-                Our prayer is that you experience
-                God's presence, discover your purpose,
-                build meaningful relationships and
-                grow in your faith.
-            </p>
-
-            <p>
-                With blessings,
-            </p>
-
-            <div class="pastor-name">
-                Pastor James Mwangi
-            </div>
-
-            <div class="pastor-title">
-                Lead Pastor
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     SERVICE INFORMATION
-========================= -->
-
-<section class="service-bar">
-
-    <div class="container service-grid">
-
-
-        <div class="service-box">
-
-            <h3>
-                📅 Join Us This Sunday
-            </h3>
-
-            <p>
-                Worship • Word • Fellowship
-            </p>
-
-        </div>
-
-
-        <div class="service-box">
-
-            <h3>
-                ⏰ Service Times
-            </h3>
-
-            <p>
-                8:00 AM | 10:00 AM | 12:00 PM
-            </p>
-
-        </div>
-
-
-        <div class="service-box">
-
-            <h3>
-                📍 Our Location
-            </h3>
-
-            <p>
-                123 Faith Avenue,
-                Lagos, Nigeria
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CHURCH LIFE / GALLERY
-========================= -->
-
-<section
-    class="section"
-    id="ministries"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>
-                OUR CHURCH FAMILY
-            </span>
-
-            <h2>
-                Worship • Pray • Grow • Serve
-            </h2>
-
-            <p>
-                Real people. Real faith.
-                A real church family.
-            </p>
-
-        </div>
-
-
-        <div class="gallery">
-
-
-            <!-- Worship -->
-
-            <div class="gallery-card">
-
+            <div class="product-image">
                 <img
-                    src="https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=900&q=90"
-                    alt="People worshipping in church"
-                >
-
-                <div class="gallery-caption">
-                    Worship Together
-                </div>
-
+                    src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=85"
+                    alt="Gentle Glow Cleanser">
             </div>
 
+            <div class="product-info">
 
-            <!-- Prayer -->
+                <h3>Gentle Glow Cleanser</h3>
 
-            <div class="gallery-card">
+                <small>100ml</small>
 
-                <img
-                    src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=900&q=90"
-                    alt="Person praying"
-                >
+                <div class="price">₦12,000</div>
 
-                <div class="gallery-caption">
-                    A House of Prayer
-                </div>
-
-            </div>
-
-
-            <!-- Fellowship -->
-
-            <div class="gallery-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=90"
-                    alt="People enjoying fellowship"
-                >
-
-                <div class="gallery-caption">
-                    Life in Fellowship
-                </div>
-
-            </div>
-
-
-            <!-- Praise -->
-
-            <div class="gallery-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=900&q=90"
-                    alt="Church praise and worship"
-                >
-
-                <div class="gallery-caption">
-                    Praise & Worship
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     EVENTS
-========================= -->
-
-<section
-    class="section"
-    id="events"
-    style="background:#f7f6f2;"
->
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>
-                WHAT'S HAPPENING
-            </span>
-
-            <h2>
-                Church Life & Events
-            </h2>
-
-            <p>
-                Come connect, worship and grow with us.
-            </p>
-
-        </div>
-
-
-        <div class="gallery">
-
-
-            <div class="gallery-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=900&q=90"
-                    alt="Prayer meeting"
-                >
-
-                <div class="gallery-caption">
-                    Prayer Meetings
-                </div>
-
-            </div>
-
-
-            <div class="gallery-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=90"
-                    alt="Church fellowship"
-                >
-
-                <div class="gallery-caption">
-                    Community Fellowship
-                </div>
-
-            </div>
-
-
-            <div class="gallery-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=900&q=90"
-                    alt="Church gathering"
-                >
-
-                <div class="gallery-caption">
-                    Church Gatherings
-                </div>
-
-            </div>
-
-
-            <div class="gallery-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=900&q=90"
-                    alt="Church celebration"
-                >
-
-                <div class="gallery-caption">
-                    Celebration
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-    class="section contact"
-    id="contact"
->
-
-    <div class="container contact-grid">
-
-
-        <!-- Contact details -->
-
-        <div class="contact-left">
-
-            <h2>
-                We'd Love to
-                Hear From You
-            </h2>
-
-            <p>
-                Whether you have a prayer request,
-                a question, or simply want to learn
-                more about our church, please reach out.
-                We are here for you!
-            </p>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ☎
-                </div>
-
-                <div>
-
-                    <h4>
-                        Phone
-                    </h4>
-
-                    <p>
-                        +234 800 000 0000
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ✉
-                </div>
-
-                <div>
-
-                    <h4>
-                        Email
-                    </h4>
-
-                    <p>
-                        info@gracecommunitychurch.org
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📍
-                </div>
-
-                <div>
-
-                    <h4>
-                        Address
-                    </h4>
-
-                    <p>
-                        123 Faith Avenue,
-                        Lagos, Nigeria
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Social media -->
-
-            <div class="social">
-
-                <strong>
-                    Follow Us
-                </strong>
-
-                <div class="social-links">
-
-                    <a href="#" aria-label="Facebook">
-                        f
-                    </a>
-
-                    <a href="#" aria-label="Instagram">
-                        IG
-                    </a>
-
-                    <a href="#" aria-label="YouTube">
-                        ▶
-                    </a>
-
-                    <a href="#" aria-label="X">
-                        X
-                    </a>
-
-                    <a href="#" aria-label="TikTok">
-                        ♪
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Contact form -->
-
-        <div class="contact-form">
-
-            <form>
-
-                <div class="form-row">
-
-                    <div class="form-group">
-
-                        <label>
-                            Name *
-                        </label>
-
-                        <input
-                            type="text"
-                            placeholder="Your name"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Email *
-                        </label>
-
-                        <input
-                            type="email"
-                            placeholder="your@email.com"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Message *
-                    </label>
-
-                    <textarea
-                        placeholder="How can we pray for you?"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="send-button"
-                >
-                    Send Message →
+                <button class="cart">
+                    Add to Cart
                 </button>
 
-            </form>
+            </div>
 
         </div>
 
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                <img
+                    src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=85"
+                    alt="Radiance Face Serum">
+            </div>
+
+            <div class="product-info">
+
+                <h3>Radiance Face Serum</h3>
+
+                <small>30ml</small>
+
+                <div class="price">₦18,000</div>
+
+                <button class="cart">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                <img
+                    src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=85"
+                    alt="Hydrating Moisturizer">
+            </div>
+
+            <div class="product-info">
+
+                <h3>Hydrating Moisturizer</h3>
+
+                <small>50ml</small>
+
+                <div class="price">₦16,000</div>
+
+                <button class="cart">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                <img
+                    src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85"
+                    alt="Clarifying Toner">
+            </div>
+
+            <div class="product-info">
+
+                <h3>Clarifying Toner</h3>
+
+                <small>150ml</small>
+
+                <div class="price">₦14,000</div>
+
+                <button class="cart">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
 
+<!-- ================= REVIEWS ================= -->
 
-<!-- =========================
-     FOOTER
-========================= -->
+<section class="reviews" id="reviews">
+
+    <div class="section-heading">
+
+        <div class="small-heading">Testimonials</div>
+
+        <h2>What Our Customers Say</h2>
+
+        <p>
+            Real people. Real experiences. Real skincare love.
+        </p>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "I love how gentle and effective these products are.
+                My skin feels fresh and cared for every day."
+            </p>
+
+            <h4>— Ada, Lagos</h4>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "The moisturizer is amazing! It keeps my skin feeling
+                hydrated throughout the day."
+            </p>
+
+            <h4>— Chidinma, Abuja</h4>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "PureGlow has become part of my daily routine.
+                I absolutely love the products!"
+            </p>
+
+            <h4>— Tolu, Port Harcourt</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <div class="small-heading">Get In Touch</div>
+
+            <h2>We'd Love to Hear From You</h2>
+
+            <p>
+                Have a question about our products or need help
+                choosing a skincare routine? Our team is happy to help.
+            </p>
+
+            <div class="contact-details">
+
+                <div>📞 <strong>+234 801 234 5678</strong></div>
+
+                <div>✉️ <strong>hello@pureglowskincare.com</strong></div>
+
+                <div>📍 <strong>Lagos, Nigeria</strong></div>
+
+                <div>🕘 <strong>Mon – Sat: 9am – 6pm</strong></div>
+
+            </div>
+
+        </div>
+
+
+        <form>
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required>
+
+            <textarea
+                placeholder="How can we help you?"
+                required></textarea>
+
+            <button type="submit">
+                Send Message →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SOCIAL MEDIA ================= -->
+
+<section class="social">
+
+    <h3>Let's Stay Connected</h3>
+
+    <div class="social-buttons">
+
+        <a href="#" title="Facebook">f</a>
+
+        <a href="#" title="Instagram">◎</a>
+
+        <a href="#" title="X">𝕏</a>
+
+        <a href="#" title="TikTok">♪</a>
+
+        <a href="#" title="YouTube">▶</a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="container">
+    <div class="footer-container">
 
-        <div class="footer-grid">
+        <div>
 
+            <div class="logo">
 
-            <div>
+                <div class="logo-icon">🌿</div>
 
-                <div class="footer-logo">
-                    ✝ GRACE
+                <div class="logo-text" style="color:white;">
+                    PureGlow
+                    <span style="color:#c9d4ce;">
+                        SKINCARE
+                    </span>
                 </div>
 
-                <p>
-                    COMMUNITY CHURCH
-                </p>
-
-                <br>
-
-                <p>
-                    A welcoming church family committed
-                    to faith, love, service and community.
-                </p>
-
             </div>
 
+            <br>
 
-            <div>
-
-                <h3>
-                    Quick Links
-                </h3>
-
-                <ul class="footer-links">
-
-                    <li>
-                        <a href="#home">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#about">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#ministries">
-                            Ministries
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#events">
-                            Events
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Connect
-                </h3>
-
-                <ul class="footer-links">
-
-                    <li>
-                        <a href="#contact">
-                            Contact
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Facebook
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Instagram
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            YouTube
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Services
-                </h3>
-
-                <p>
-                    Sunday Worship
-                    <br>
-                    8:00 AM | 10:00 AM | 12:00 PM
-                </p>
-
-                <br>
-
-                <p>
-                    Wednesday Bible Study
-                    <br>
-                    6:00 PM
-                </p>
-
-            </div>
-
+            <p>
+                Natural beauty. Healthy skin.
+                Confidence that glows from within.
+            </p>
 
         </div>
 
 
-        <div class="copyright">
+        <div>
 
-            © 2026 Grace Community Church.
-            All Rights Reserved.
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
 
         </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>📞 +234 801 234 5678</p>
+
+            <p>✉️ hello@pureglowskincare.com</p>
+
+            <p>📍 Lagos, Nigeria</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 PureGlow Skincare.
+        All Rights Reserved.
 
     </div>
 
@@ -1732,3 +1166,4 @@
 
 </body>
 </html>
+```
